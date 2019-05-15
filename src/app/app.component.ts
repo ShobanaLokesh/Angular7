@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular001';
+  title = 'angular7';
+  name="easy ";
+  score=20;
+
+
+displaymessage = function()
+{
+ this.score= this.score*10;
+}
 }

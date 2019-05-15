@@ -1,0 +1,81 @@
+<p>
+  directive works!
+</p>
+<div>
+  Demo of *ngFor witth JSON Array
+  <table border="1">
+    <thead>
+      <tr>
+      <th>S.No</th>
+      <th>City</th>
+      <th>Code</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let l of locations">
+      <td>{{l.id}}</td>
+      <td>{{l.City}}</td>
+      <td>{{l.Code}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<hr>
+<div>
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>User Name</th>
+      <th>ZipCode</th>
+      <th>Latitude</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{u.id}}</td>
+        <td>{{u.username}}</td>
+        <td>{{u.address.zipcode}}</td>
+        <td>{{u.address.geo.lat}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+<hr>
+<div>
+  Demo of *ngIf directive
+  <button (click)="toggleCheck()">Toggle Check</button>
+  <div class="box" *ngIf="check">
+  </div>
+  <br>
+  Demo of *ngIf directive with else criteria:
+  <button (click)="toggleElseCheck()">Toggle Else Check</button>
+  <div class="yesbox" *ngIf="checkelse; else elseTemplate">
+    I am here!
+  </div>
+  <ng-template #elseTemplate>
+    <div class="nobox">
+    Find me
+    </div>
+  </ng-template>
+  <hr>
+  <div>
+    Demo of *ngSwitchCase Directive
+  <div [ngSwitch]="city">
+  <span *ngSwitchCase="'044'">Chennai</span>
+  <span *ngSwitchCase="'022'">Mumbai</span>
+  <span *ngSwitchCase="'033'">Kolkata</span>
+  <span *ngSwitchCase="'080'">Bengaluru</span>
+  <span *ngSwitchDefault>Code/ City not Available!!</span>
+</div>
+</div>
+<hr>
+<div>
+  Demo of Inbuilt PIPES
+  <br><br>
+  Chennai :{{name | uppercase }}
+  <br>
+  Savings: {{money | currency:'JPY'}}
+  <br>
+  Birthday : {{birthday | date}}
+</div>
