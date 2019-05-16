@@ -1,0 +1,20 @@
+<div class="parent">
+  I am Consume Parent
+  <br>
+  value of name in parent:{{ name }}
+</div>
+<br>
+<div calss=child>
+  I am Child:
+  <br>
+  <app-child [sendname]="name" (sendToParent)="RecievedNewname($event)"></app-child>
+</div>
+<br>
+<br>
+
+<hr>
+<a routeLink="child1">Child1</a> &nbsp;
+<a routeLink="child1">Child2</a>  &nbsp;
+<br>
+<br>
+<router-outlet></router-outlet>
